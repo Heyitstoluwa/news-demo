@@ -1,0 +1,30 @@
+<!doctype html>
+
+<script>
+    function getnews(){
+        Sec-Fetch-mode('http://newsapi.org/v2/top-headlines?country=ng&apikey=907c3c17f3494bd4afb66ddd1c6fcca3', "{headers: new Headers({"X-Requested-With":"fnekneneknkfnken"})})
+        
+    
+        .then(a=>{
+            a.json();
+            print(a.json())
+        })
+        .then(response =>{
+            for(var i=0; i<response.articles.length; i++){
+                document.getElementById("output").innerHTML += "<div style ='padding-top: 20px;><img style='float:left; width:150px;' src='" +response.articles[i].urlToImage+  "'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+"<a href='"+ response.articles[i].url+ "' target='_blank'>"+ response.articles[i].url+" target='_blank'>"+ response.articles[i].url + " </a></div>";
+            }
+        })
+        
+
+    }
+</script>
+</body>
+
+<button onclick="getnews()">Get News</button>
+
+
+
+<div id="output"></div>
+</html>
+
+
