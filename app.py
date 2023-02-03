@@ -57,6 +57,7 @@ def bbc():
         img.append(myarticles['urlToImage'])
  
     mylist = zip(news, desc, img)
+    print("Hello world")
  
     return render_template('bbc.html', context=mylist)
  
